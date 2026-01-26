@@ -1,0 +1,6 @@
+echo Application de la palette Megadrive...
+convert Image2.png -dither none -remap MD_palette.png Image2_md.png
+echo.
+echo Conversions en 16 couleurs....
+convert Image2_md.png -dither none -colors 16 -remap MD_palette.png result_16.png
+PAUSE

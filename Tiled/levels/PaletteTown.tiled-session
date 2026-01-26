@@ -1,0 +1,88 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/PaletteTown.tmx",
+    "expandedProjectPaths": [
+        "PaletteTown",
+        "."
+    ],
+    "exportAsImage.drawTileGrid": false,
+    "exportAsImage.includeBackgroundColor": false,
+    "exportAsImage.useCurrentScale": false,
+    "exportAsImage.visibleLayersOnly": true,
+    "file.lastUsedOpenFilter": "Tous les fichiers (*)",
+    "fileStates": {
+        "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/PaletteTown.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 182.33333333333331,
+                "y": 148.66666666666669
+            }
+        },
+        "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/Tileset_PaletteTown_MD_PAL0.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/Tileset_PaletteTown_MD_PAL1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "PaletteTown/PaletteTown.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 234.66666666666663,
+                "y": 158.99999999999997
+            }
+        },
+        "PaletteTown/Tileset0.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1.5
+        },
+        "PaletteTown/Tileset_PaletteTown_MD_PAL0.tsx": {
+            "scaleInDock": 0.75,
+            "scaleInEditor": 1
+        },
+        "PaletteTown/Tileset_PaletteTown_MD_PAL1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.imagePath": "E:/ProgMD/SGDK/project/MD_FireRed/res/gfx",
+    "map.fixedSize": true,
+    "map.height": 32,
+    "map.lastUsedFormat": "tmx",
+    "map.orientation": 1,
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 32,
+    "openFiles": [
+        "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/PaletteTown.tmx",
+        "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/Tileset_PaletteTown_MD_PAL0.tsx",
+        "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/Tileset_PaletteTown_MD_PAL1.tsx"
+    ],
+    "project": "PaletteTown.tiled-project",
+    "recentFiles": [
+        "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/Tileset_PaletteTown_MD_PAL1.tsx",
+        "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/Tileset_PaletteTown_MD_PAL0.tsx",
+        "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/PaletteTown.tmx",
+        "PaletteTown/PaletteTown.tmx",
+        "PaletteTown/Tileset_PaletteTown_MD_PAL1.tsx",
+        "PaletteTown/Tileset_PaletteTown_MD_PAL0.tsx",
+        "PaletteTown/Tileset0.tsx"
+    ],
+    "tileset.embedInMap": false,
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.margin": 0,
+    "tileset.spacing": 0,
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    },
+    "tileset.transparentColor": "#ff00ff",
+    "tileset.type": 0,
+    "tileset.useTransparentColor": true
+}

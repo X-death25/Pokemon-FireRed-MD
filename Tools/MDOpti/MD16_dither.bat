@@ -1,0 +1,6 @@
+echo Application de la palette Megadrive...
+convert paper.png -dither FloydSteinberg -remap MD_palette.png paper_md.png
+echo.
+echo Conversions en 16 couleurs....
+convert paper_md.png -dither FloydSteinberg -colors 16 +dither -remap MD_palette.png result_16.png
+PAUSE
