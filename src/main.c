@@ -5,6 +5,8 @@
  
 #include "genesis.h"
 #include "gfx.h"
+#include "sprite.h"
+#include "player.h"
 
 // globals 
 
@@ -39,14 +41,16 @@ int main()
     VDP_setPlaneSize(64, 64, TRUE);
     VDP_setScrollingMode(HSCROLL_PLANE, VSCROLL_PLANE);
 
-    SPR_init();
-
     // init joypad 
 	JOY_setEventHandler(joyEvent);
+
+    // init sprite engine with default parameters
+    SPR_init();
 
     // palettes
     PAL_setPalette(PAL0, PaletteTown_0_pal.data, DMA);
     PAL_setPalette(PAL1, PaletteTown_1_pal.data, DMA);
+	PAL_setPalette(PAL2, player_sprite.palette->data, DMA);
     PAL_setColor(63, 0xFFFF);
     VDP_setTextPalette(PAL3);
 
@@ -60,6 +64,9 @@ int main()
     int idx2 = ind;
     VDP_loadTileSet(&PaletteTown_1_tileset, ind, DMA);
     ind += PaletteTown_1_tileset.numTile;
+
+  //  player = SPR_addSprite(&player_sprite, 0, 10, TILE_ATTR(PAL2, 0, FALSE, FALSE));
+    PLAYER_init(0);
 
     // tilemaps
     const TileMap *mapL0 = &PaletteTown_L0;
@@ -76,12 +83,18 @@ int main()
 
     while(1)
     {
+		// Update Sprite
+		 u16 value = JOY_readJoypad(JOY_1);
+		 PLAYER_handleInput(value); 
+		 PLAYER_update(); 
+		 PLAYER_updateScreenPosition();
 		// Update Scrolling
-		UpdateScrolling();
+	//	UpdateScrolling();
+        SPR_update();
          // always call this method at the end of the frame
         SYS_doVBlankProcess();
     }
-}
+}   
 
 static void handleInput()
 {

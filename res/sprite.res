@@ -1,0 +1,1 @@
+SPRITE player_sprite "sprite/Player.png" 12 16 FAST 5

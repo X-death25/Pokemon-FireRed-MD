@@ -1,4 +1,4 @@
-out/src/main.o: src/main.c E:/ProgMD/SGDK/inc/genesis.h \
+out/src/player.o: src/player.c E:/ProgMD/SGDK/inc/genesis.h \
  E:/ProgMD/SGDK/inc/types.h E:/ProgMD/SGDK/inc/config.h \
  E:/ProgMD/SGDK/inc/asm.h E:/ProgMD/SGDK/inc/sys.h \
  E:/ProgMD/SGDK/inc/sram.h E:/ProgMD/SGDK/inc/mapper.h \
@@ -26,4 +26,4 @@ out/src/main.o: src/main.c E:/ProgMD/SGDK/inc/genesis.h \
  E:/ProgMD/SGDK/inc/types.h E:/ProgMD/SGDK/inc/ext/flash-save/saveman.h \
  E:/ProgMD/SGDK/inc/ext/console.h E:/ProgMD/SGDK/inc/config.h \
  E:/ProgMD/SGDK/inc/string.h E:/ProgMD/SGDK/inc/maths.h \
- E:/ProgMD/SGDK/inc/dma.h res/gfx.h res/sprite.h src/player.h
+ E:/ProgMD/SGDK/inc/dma.h src/player.h res/sprite.h
