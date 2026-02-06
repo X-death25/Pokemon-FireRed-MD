@@ -8,6 +8,10 @@
 #include "sprite.h"
 #include "player.h"
 
+// Dans player.h ou en haut de player.c
+static bool wasMoving = FALSE;
+static u8 lastFacingDir = 0;
+
 // globals 
 
 int scrollX = 0; 
@@ -89,7 +93,7 @@ int main()
 		 PLAYER_update(); 
 		 PLAYER_updateScreenPosition();
 		// Update Scrolling
-	//	UpdateScrolling();
+		UpdateScrolling();
         SPR_update();
          // always call this method at the end of the frame
         SYS_doVBlankProcess();
@@ -125,32 +129,14 @@ static void joyEvent(u16 joy, u16 changed, u16 state)
 
 static void UpdateScrolling()
 {
-    if (rightPressed) scrollX++;
-    if (leftPressed)  scrollX--;
-
-    if (downPressed) scrollY--;
-    if (upPressed)   scrollY++;
-
-    // limites horizontales
-    int minX = 0;
-    int maxX = mapWidthPx - 320;
-
-    if (scrollX < minX) scrollX = minX;
-    if (scrollX > maxX) scrollX = maxX;
-
-    // limites verticales (automatiques)
-    int minY = -(mapHeightPx - 224);   // bas
-    int maxY = 0;                      // haut
-
-    if (scrollY < minY) scrollY = minY;
-    if (scrollY > maxY) scrollY = maxY;
-
-    // appliquer le scroll
+    // Axe X : inversé
     VDP_setHorizontalScroll(BG_A, -scrollX);
-    VDP_setVerticalScroll(BG_A, -scrollY);
-
     VDP_setHorizontalScroll(BG_B, -scrollX);
-    VDP_setVerticalScroll(BG_B, -scrollY);
+
+    // Axe Y : direct
+    VDP_setVerticalScroll(BG_A, scrollY);
+    VDP_setVerticalScroll(BG_B, scrollY);
 }
+
 
 
