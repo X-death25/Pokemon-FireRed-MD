@@ -7,8 +7,6 @@
 #include "gfx.h"
 #include "sprite.h"
 #include "player.h"
-#include "levels.h"
-
 
 // Dans player.h ou en haut de player.c
 static bool wasMoving = FALSE;
@@ -53,15 +51,6 @@ int main()
     // init sprite engine with default parameters
     SPR_init();
 
-    // Load first Level
-
-    Engine_LoadLevel(&LEVEL_BOURG_PALETTE_DAY);
-
-    //  player = SPR_addSprite(&player_sprite, 0, 10, TILE_ATTR(PAL2, 0, FALSE, FALSE));
-    PLAYER_init(0);
-
-
-    /*
     // palettes
     PAL_setPalette(PAL0, PaletteTown_0_pal.data, DMA);
     PAL_setPalette(PAL1, PaletteTown_1_pal.data, DMA);
@@ -95,7 +84,6 @@ int main()
 
        // VDP process done, we can re enable interrupts
     SYS_enableInts();
-    */
 
     while(1)
     {

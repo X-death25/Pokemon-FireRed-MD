@@ -9,5 +9,6 @@ extern const TileSet PaletteTown_0_tileset;
 extern const TileSet PaletteTown_1_tileset;
 extern const TileMap PaletteTown_L0;
 extern const TileMap PaletteTown_L1;
+extern const TileMap PaletteTown_CL;
 
 #endif // _RES_GFX_H_

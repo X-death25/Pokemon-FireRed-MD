@@ -26,4 +26,5 @@ out/src/main.o: src/main.c E:/ProgMD/SGDK/inc/genesis.h \
  E:/ProgMD/SGDK/inc/types.h E:/ProgMD/SGDK/inc/ext/flash-save/saveman.h \
  E:/ProgMD/SGDK/inc/ext/console.h E:/ProgMD/SGDK/inc/config.h \
  E:/ProgMD/SGDK/inc/string.h E:/ProgMD/SGDK/inc/maths.h \
- E:/ProgMD/SGDK/inc/dma.h res/gfx.h res/sprite.h src/player.h
+ E:/ProgMD/SGDK/inc/dma.h res/gfx.h res/sprite.h inc/player.h \
+ inc/levels.h inc/Engine.h

@@ -2,6 +2,7 @@
 
 #include "player.h"
 #include "res/sprite.h"
+#include "res/gfx.h"
 
 #define MAP_WIDTH_PIXELS   480
 #define MAP_HEIGHT_PIXELS  320
@@ -32,6 +33,23 @@ s16 facingDir;
 u16 animFrame = 0;
 u16 animTimer = 0;
 
+u16 getCollisionTile(u16 x, u16 y)
+{
+    if (x >= PaletteTown_CL.w || y >= PaletteTown_CL.h)
+        return 3; // Hors map = bloqué
+    
+    u16 index = y * PaletteTown_CL.w + x;
+    return PaletteTown_CL.tilemap[index];
+}
+
+bool canWalkTo(u16 tileX, u16 tileY)
+{
+    u16 tile = getCollisionTile(tileX, tileY);
+    
+    // Tiles walkables
+    return (tile == 0);
+}
+
 u16 PLAYER_init(u16 vramIndex)
 {
     posX = 120;
@@ -41,6 +59,8 @@ u16 PLAYER_init(u16 vramIndex)
     facingDir = ANIM_DOWN;
     animFrame = 0;
     animTimer = 0;
+
+    PAL_setPalette(PAL2, player_sprite.palette->data, DMA);
     
    player = SPR_addSprite(&player_sprite, posX, posY, 
         TILE_ATTR(PAL2, 0, FALSE, FALSE));
