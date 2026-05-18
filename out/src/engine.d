@@ -26,4 +26,4 @@ out/src/engine.o: src/engine.c E:/ProgMD/SGDK/inc/genesis.h \
  E:/ProgMD/SGDK/inc/types.h E:/ProgMD/SGDK/inc/ext/flash-save/saveman.h \
  E:/ProgMD/SGDK/inc/ext/console.h E:/ProgMD/SGDK/inc/config.h \
  E:/ProgMD/SGDK/inc/string.h E:/ProgMD/SGDK/inc/maths.h \
- E:/ProgMD/SGDK/inc/dma.h res/sprite.h res/gfx.h
+ E:/ProgMD/SGDK/inc/dma.h inc/engine.h res/sprite.h res/gfx.h

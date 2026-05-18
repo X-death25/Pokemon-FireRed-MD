@@ -1,0 +1,11 @@
+0Transparent / vertPassable
+1RougeBloqué (mur, barrière, maison)
+2BleuEau (bloqué pour l'instant, surfable plus tard)
+3JauneHerbe haute (passable + trigger rencontre Pokémon)
+4VioletWarp (téléportation vers autre map)
+
+Étape 2 — Côté rescomp
+Dans ton fichier resources.res, tu déclares ce calque comme une TILEMAP ou directement comme MAP. Le truc important c'est que tu n'as pas besoin de charger les graphismes de collision en VRAM — tu ne te sers que des indices de tiles comme valeurs sémantiques.
+Donc dans resources.res tu auras probablement quelque chose comme :
+
+

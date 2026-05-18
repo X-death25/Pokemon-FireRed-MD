@@ -5,8 +5,8 @@
     },
     "activeFile": "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/PaletteTown.tmx",
     "expandedProjectPaths": [
-        "PaletteTown",
-        "."
+        ".",
+        "PaletteTown"
     ],
     "exportAsImage.drawTileGrid": false,
     "exportAsImage.includeBackgroundColor": false,
@@ -18,8 +18,8 @@
             "scale": 1.5,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 214,
-                "y": 149.33333333333334
+                "x": 239.99999999999997,
+                "y": 159.66666666666669
             }
         },
         "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/Tileset_PaletteTown_MD_PAL0.tsx": {
@@ -38,8 +38,8 @@
             "scale": 1.5,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 239.33333333333331,
-                "y": 160
+                "x": 240,
+                "y": 159.66666666666669
             }
         },
         "PaletteTown/PaletteTown_MD_night_all.tsx": {
@@ -47,11 +47,11 @@
             "scaleInEditor": 1
         },
         "PaletteTown/PaletteTown_night.tmx": {
-            "scale": 5.5,
-            "selectedLayer": 1,
+            "scale": 1.5,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 76,
-                "y": 236.72727272727275
+                "x": 239.66666666666663,
+                "y": 159.66666666666669
             }
         },
         "PaletteTown/Tileset0.tsx": {
@@ -80,19 +80,20 @@
         "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/Tileset_PaletteTown_MD_PAL0.tsx",
         "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/Tileset_PaletteTown_MD_PAL1.tsx",
         "PaletteTown/Tileset_PaletteTown_MD_PAL0.tsx",
-        "PaletteTown/PaletteTown.tmx",
-        "PaletteTown/Collision_tiles.tsx"
+        "PaletteTown/PaletteTown_night.tmx",
+        "PaletteTown/Collision_tiles.tsx",
+        "PaletteTown/PaletteTown.tmx"
     ],
     "project": "PaletteTown.tiled-project",
     "recentFiles": [
-        "PaletteTown/Collision_tiles.tsx",
         "PaletteTown/PaletteTown.tmx",
+        "PaletteTown/Collision_tiles.tsx",
+        "PaletteTown/PaletteTown_night.tmx",
         "PaletteTown/Tileset_PaletteTown_MD_PAL0.tsx",
         "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/Tileset_PaletteTown_MD_PAL1.tsx",
         "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/Tileset_PaletteTown_MD_PAL0.tsx",
         "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/PaletteTown.tmx",
         "PaletteTown/PaletteTown_MD_night_all.tsx",
-        "PaletteTown/PaletteTown_night.tmx",
         "PaletteTown/Tileset_PaletteTown_MD_PAL1.tsx",
         "PaletteTown/Tileset0.tsx"
     ],

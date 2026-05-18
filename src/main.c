@@ -5,14 +5,11 @@
  
 #include "genesis.h"
 #include "gfx.h"
+#include "music.h"
 #include "sprite.h"
 #include "player.h"
 #include "levels.h"
 
-
-// Dans player.h ou en haut de player.c
-static bool wasMoving = FALSE;
-static u8 lastFacingDir = 0;
 
 // globals 
 
@@ -52,6 +49,10 @@ int main()
 
     // init sprite engine with default parameters
     SPR_init();
+	
+	// init music driver
+	
+	// XGM2_play(oak_lab_music);
 
     // Load first Level
 
@@ -134,8 +135,7 @@ static void joyEvent(u16 joy, u16 changed, u16 state)
 
     if (changed & state & BUTTON_B)
     {
-        asm("move.l (4),%a0\n");
-        asm("jmp (%a0)\n");
+
     }
 }
 
