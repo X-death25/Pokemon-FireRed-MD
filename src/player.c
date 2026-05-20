@@ -19,7 +19,7 @@
 #define PLAYER_SPEED_RUN   2
 
 #define ANIM_TIMER_WALK    6
-#define ANIM_TIMER_RUN     3
+#define ANIM_TIMER_RUN     4
 
 #define TILE_PIXEL_SIZE     8   // unité TileMap C (rescomp découpe en 8×8)
 #define FOOT_OFFSET_Y  4   // offset descendant pour la collision des pieds
@@ -40,6 +40,9 @@ extern int scrollY;
 static bool isRunning = FALSE;
 
 static Sprite* player;
+static Sprite* playerRun;
+static Sprite* charmander;    
+
 static s16 posX;
 static s16 posY;
 static s16 xOrder;
@@ -120,24 +123,15 @@ void PLAYER_init(u16 vramIndex)
     player = SPR_addSprite(&player_sprite, posX, posY, TILE_ATTR(PAL2, 0, FALSE, FALSE));
     SPR_setAnim(player, ANIM_DOWN);
 	
-	KLog("=== Dump tilemap ===");
-{
-    const TileMap *cl = Engine_GetCurrentLevel()->collisionMap;
-    u16 w = cl->w;
-    u16 h = cl->h;
-    char buf[256];
-    char tmp[8];
-    
-    for (u16 y = 0; y < h; y += 2) {  // toutes les 2 lignes (= 1 case Tiled)
-        buf[0] = '\0';
-        for (u16 x = 0; x < w; x += 2) {  // toutes les 2 colonnes
-            u16 id = cl->tilemap[y * w + x] & 0x07FF;
-            sprintf(tmp, "%d ", id);
-            strcat(buf, tmp);
-        }
-        KLog(buf);
-    }
-}
+	// Sprite de course (initialement caché)
+	playerRun = SPR_addSprite(&player_sprite_run, posX, posY, TILE_ATTR(PAL2, 0, FALSE, FALSE));
+	SPR_setAnim(playerRun, ANIM_DOWN);
+	SPR_setVisibility(playerRun, HIDDEN);
+	
+	// Salamèche apparaît à 24 pixels à droite de Red
+	//charmander = SPR_addSprite(&charmander_sprite, posX + 24, posY + 8, TILE_ATTR(PAL2, 0, FALSE, FALSE));
+	//SPR_setAnim(charmander, ANIM_RIGHT);
+	//SPR_setFrame(charmander, 0);
 
 }
 
@@ -209,8 +203,14 @@ void PLAYER_update(void)
     }
 
     
-    SPR_setAnim(player, facingDir);
-    SPR_setFrame(player, animFrame);
+    // --- Sélection du sprite actif selon mode ---
+	Sprite* active   = isRunning ? playerRun : player;
+	Sprite* inactive = isRunning ? player    : playerRun;
+
+	SPR_setVisibility(inactive, HIDDEN);
+	SPR_setVisibility(active, VISIBLE);
+	SPR_setAnim(active, facingDir);
+	SPR_setFrame(active, animFrame);
 }
 
 
@@ -259,5 +259,35 @@ void PLAYER_updateScreenPosition(void)
     if (scrollY > MAP_HEIGHT_PIXELS - SCREEN_HEIGHT)
         scrollY = MAP_HEIGHT_PIXELS - SCREEN_HEIGHT;
 
-    SPR_setPosition(player, posX - scrollX, posY - scrollY);
+    Sprite* active = isRunning ? playerRun : player;
+	SPR_setPosition(active, posX - scrollX, posY - scrollY);
+	// Position de Salamèche relative à Red (24px à droite, 8px plus bas)
+	//SPR_setPosition(charmander, (posX + 24) - scrollX, (posY + 8) - scrollY);
+}
+
+// --- Getters pour les autres modules (follower, etc.) ---
+
+s16 PLAYER_getPosX(void)
+{
+    return posX;
+}
+
+s16 PLAYER_getPosY(void)
+{
+    return posY;
+}
+
+u8 PLAYER_getFacingDir(void)
+{
+    return facingDir;
+}
+
+bool PLAYER_isRunning(void)
+{
+    return isRunning;
+}
+
+bool PLAYER_isMoving(void)
+{
+    return (xOrder != 0 || yOrder != 0);
 }

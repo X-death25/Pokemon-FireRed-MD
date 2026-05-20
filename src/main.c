@@ -4,10 +4,13 @@
  */
  
 #include "genesis.h"
+
 #include "gfx.h"
 #include "music.h"
 #include "sprite.h"
+
 #include "player.h"
+#include "follower.h"
 #include "levels.h"
 
 
@@ -60,51 +63,22 @@ int main()
 
     //  player = SPR_addSprite(&player_sprite, 0, 10, TILE_ATTR(PAL2, 0, FALSE, FALSE));
     PLAYER_init(0);
+	FOLLOWER_init(PLAYER_getPosX(), PLAYER_getPosY(), PLAYER_getFacingDir());
 
-
-    /*
-    // palettes
-    PAL_setPalette(PAL0, PaletteTown_0_pal.data, DMA);
-    PAL_setPalette(PAL1, PaletteTown_1_pal.data, DMA);
-	PAL_setPalette(PAL2, player_sprite.palette->data, DMA);
-    PAL_setColor(63, 0xFFFF);
-    VDP_setTextPalette(PAL3);
-
-    // tilesets
-    ind = TILE_USER_INDEX;
-
-    int idx1 = ind;
-    VDP_loadTileSet(&PaletteTown_0_tileset, ind, DMA);
-    ind += PaletteTown_0_tileset.numTile;
-
-    int idx2 = ind;
-    VDP_loadTileSet(&PaletteTown_1_tileset, ind, DMA);
-    ind += PaletteTown_1_tileset.numTile;
-
-  //  player = SPR_addSprite(&player_sprite, 0, 10, TILE_ATTR(PAL2, 0, FALSE, FALSE));
-    PLAYER_init(0);
-
-    // tilemaps
-    const TileMap *mapL0 = &PaletteTown_L0;
-    const TileMap *mapL1 = &PaletteTown_L1;
-
-    VDP_setTileMapEx(BG_A, mapL0, TILE_ATTR_FULL(PAL1, FALSE, FALSE, FALSE, idx2),
-                     0, 0, 0, 0, mapL0->w, mapL0->h, CPU);
-
-    VDP_setTileMapEx(BG_B, mapL1, TILE_ATTR_FULL(PAL0, FALSE, FALSE, FALSE, idx1),
-                     0, 0, 0, 0, mapL1->w, mapL1->h, CPU);
-
-       // VDP process done, we can re enable interrupts
-    SYS_enableInts();
-    */
 
     while(1)
     {
-		// Update Sprite
+		// Update Player Sprite
 		 u16 value = JOY_readJoypad(JOY_1);
 		 PLAYER_handleInput(value); 
 		 PLAYER_update(); 
 		 PLAYER_updateScreenPosition();
+		 
+		 // Update Pokemon Follower 
+		 
+		 FOLLOWER_update(PLAYER_getPosX(), PLAYER_getPosY(), PLAYER_getFacingDir(), PLAYER_isMoving(),PLAYER_isRunning());
+		 FOLLOWER_updateScreenPosition(scrollX, scrollY);
+				
 		// Update Scrolling
 		UpdateScrolling();
         SPR_update();
@@ -137,6 +111,11 @@ static void joyEvent(u16 joy, u16 changed, u16 state)
     {
 
     }
+	
+	if (changed & state & BUTTON_C)
+	{
+		FOLLOWER_cycleStarter();
+	}
 }
 
 static void UpdateScrolling()

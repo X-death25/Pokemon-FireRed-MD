@@ -5,8 +5,8 @@
     },
     "activeFile": "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/PaletteTown.tmx",
     "expandedProjectPaths": [
-        ".",
-        "PaletteTown"
+        "PaletteTown",
+        "."
     ],
     "exportAsImage.drawTileGrid": false,
     "exportAsImage.includeBackgroundColor": false,

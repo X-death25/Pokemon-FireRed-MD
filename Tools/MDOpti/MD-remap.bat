@@ -1,0 +1,3 @@
+echo Application de la palette Megadrive...
+convert Water.png -remap PaletteTown_MD_PAL1.png Water_16.png
+PAUSE
