@@ -31,6 +31,20 @@ typedef struct {
     u8 destFacingDir;                           // Direction au respawn
 } WarpDefinition;
 
+// --- Définition d'une animation de tiles par sprite ---
+typedef struct {
+    u16 tileX, tileY;   // Position en cases 16×16 (format Tiled)
+} TileAnimPos;
+
+typedef struct {
+    const SpriteDefinition *sprite;
+    const TileAnimPos      *positions;
+    u8  numPositions;
+    u8  animSpeed;       // frames entre chaque frame d'anim
+    u8  priority;        // TRUE = au-dessus du BG
+    u8  palette;         // PAL0..PAL3
+} TileAnimDefinition;
+
 // --- Définition complète d'un niveau ---
 typedef struct LevelDefinitionStruct {
     // Graphismes
@@ -52,6 +66,9 @@ typedef struct LevelDefinitionStruct {
     
     const WarpDefinition *warps;
     u8 numWarps;
+	
+	const TileAnimDefinition *tileAnims;
+    u8 numTileAnims;
     
 } LevelDefinition;
 

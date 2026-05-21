@@ -2,6 +2,7 @@
 #include "engine.h"
 #include "res/sprite.h"
 #include "res/gfx.h"
+#include "tile_anim.h"
 
 // Le niveau actuellement chargé
 static const LevelDefinition *currentLevel = NULL;
@@ -36,6 +37,10 @@ void Engine_LoadLevel(const LevelDefinition *lvl)
                      0, 0, 0, 0, lvl->tilemapB->w, lvl->tilemapB->h, CPU);
     VDP_setTileMapEx(BG_A, lvl->tilemapA, TILE_ATTR_FULL(PAL1, FALSE, FALSE, FALSE, idxB),
                      0, 0, 0, 0, lvl->tilemapA->w, lvl->tilemapA->h, CPU);
+					 
+	// Charger les tiles animées
+	
+	TileAnim_LoadAll(lvl->tileAnims, lvl->numTileAnims);
 }
 
 const LevelDefinition* Engine_GetCurrentLevel(void)

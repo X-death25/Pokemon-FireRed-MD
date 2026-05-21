@@ -15,11 +15,11 @@
     "file.lastUsedOpenFilter": "Tous les fichiers (*)",
     "fileStates": {
         "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/PaletteTown.tmx": {
-            "scale": 1.5,
+            "scale": 2,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 239.99999999999997,
-                "y": 159.66666666666669
+                "x": 189,
+                "y": 251.5
             }
         },
         "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/Tileset_PaletteTown_MD_PAL0.tsx": {
@@ -36,7 +36,7 @@
         },
         "PaletteTown/PaletteTown.tmx": {
             "scale": 1.5,
-            "selectedLayer": 2,
+            "selectedLayer": 1,
             "viewCenter": {
                 "x": 240,
                 "y": 159.66666666666669
@@ -78,7 +78,6 @@
     "openFiles": [
         "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/PaletteTown.tmx",
         "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/Tileset_PaletteTown_MD_PAL0.tsx",
-        "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/Tileset_PaletteTown_MD_PAL1.tsx",
         "PaletteTown/Tileset_PaletteTown_MD_PAL0.tsx",
         "PaletteTown/PaletteTown_night.tmx",
         "PaletteTown/Collision_tiles.tsx",
@@ -90,9 +89,9 @@
         "PaletteTown/Collision_tiles.tsx",
         "PaletteTown/PaletteTown_night.tmx",
         "PaletteTown/Tileset_PaletteTown_MD_PAL0.tsx",
-        "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/Tileset_PaletteTown_MD_PAL1.tsx",
         "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/Tileset_PaletteTown_MD_PAL0.tsx",
         "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/PaletteTown.tmx",
+        "E:/ProgMD/SGDK/project/MD_FireRed/res/maps/Tileset_PaletteTown_MD_PAL1.tsx",
         "PaletteTown/PaletteTown_MD_night_all.tsx",
         "PaletteTown/Tileset_PaletteTown_MD_PAL1.tsx",
         "PaletteTown/Tileset0.tsx"

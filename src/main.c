@@ -61,7 +61,7 @@ int main()
 
     Engine_LoadLevel(&LEVEL_BOURG_PALETTE_DAY);
 
-    //  player = SPR_addSprite(&player_sprite, 0, 10, TILE_ATTR(PAL2, 0, FALSE, FALSE));
+    //  Load player and follower position
     PLAYER_init(0);
 	FOLLOWER_init(PLAYER_getPosX(), PLAYER_getPosY(), PLAYER_getFacingDir());
 
@@ -75,13 +75,18 @@ int main()
 		 PLAYER_updateScreenPosition();
 		 
 		 // Update Pokemon Follower 
-		 
 		 FOLLOWER_update(PLAYER_getPosX(), PLAYER_getPosY(), PLAYER_getFacingDir(), PLAYER_isMoving(),PLAYER_isRunning());
 		 FOLLOWER_updateScreenPosition(scrollX, scrollY);
 				
 		// Update Scrolling
 		UpdateScrolling();
+		
+		// Update Animated Tiles
+		TileAnim_Update();
+		
+		// Update Sprite
         SPR_update();
+		
          // always call this method at the end of the frame
         SYS_doVBlankProcess();
     }

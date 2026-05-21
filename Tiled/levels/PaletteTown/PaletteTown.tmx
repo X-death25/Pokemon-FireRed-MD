@@ -13,7 +13,7 @@
    eJzt0jcOwjAYhmHrvyVF9I2A6BtFhHYA+gFoyYjIWbgFR+DdcLIwOERC8Sc9Q2zl/yTbStnY2Ngkl4IoVUQJZVRQRU3M5j4kLIjMa/HdRgdd9NDHwLD3KWHRTFlzMcMcCyyx+nHvmrUNtthhjwOOhr2vL/+f2D/jgitu8OAb9qY1Gc4tixzy2hne5SPQ3n1cqTPLQQPNBO9uSNcIY0z+vPcNy1UpVA==
   </data>
  </layer>
- <layer id="5" name="Collision" width="30" height="20">
+ <layer id="5" name="Collision" width="30" height="20" opacity="0">
   <data encoding="base64" compression="zlib">
    eJxjYCAdBLEwMIRAcRAOTKp5xGJS9BBjL7UBOfYS43ZCakbtHdz2opuNSw817aUGoIW9xOZvUu0lJ26pYS8x6keqvdj4tLKXWLcNNXuJqQOR+bS2lxgw2O3FZgcp9hJTl4AAAFNEPH0=
   </data>
